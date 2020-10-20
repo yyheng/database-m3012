@@ -1,0 +1,43 @@
+{% extends "layouts/base.htm" %}
+{% block title %}Home{% endblock %}
+{% block login %}<a class="nav-link" href="{{ url_for('login') }}">Login</a>{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="alert alert-info" role="alert">
+            This is a info alert—check it out!
+          </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <!-- chart number 1 -->
+                <canvas id="barChart"></canvas>
+            </div>
+            <div class="col-sm">
+                <!-- chart number 2 -->
+                <canvas id="lineChart"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <!-- chart number 1 -->
+                <canvas id=""></canvas>
+                sample text 1
+            </div>
+            <div class="col-sm">
+                <!-- chart number 2 -->
+                <canvas id=""></canvas>
+                sample text 2
+            </div>
+            <div class="col-sm">
+                <!-- chart number 2 -->
+                <canvas id=""></canvas>
+                sample text 3
+            </div>
+        </div>
+    </div>
+        
+{% endblock %}
+{% block js %} 
+    <script src="{{ url_for('static', filename='demo/line_chart.js') }}"></script>
+    <script src="{{ url_for('static', filename='demo/bar_chart.js') }}"></script>
+{% endblock %}
