@@ -44,6 +44,11 @@ def user_profile():
 def user_purchase():
     return render_template("main/user_purchase.htm")
 
+#return route to user purchase view
+@app.route("/user_privilege")
+def user_privilege():
+    return render_template("main/user_privilege.htm")
+
 ####################### ADMINISTRATOR #######################
 #return route to admin dashboard view
 @app.route("/admin_dashboard")
