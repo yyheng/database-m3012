@@ -5,5 +5,5 @@
 
 
 ### Run environment in Command Prompt
-1. set FLASK ENV=development
-2. flask run
+1. locate your folder
+2. `flask run`
