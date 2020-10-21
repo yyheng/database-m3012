@@ -1,7 +1,13 @@
 /* 
     custom stylesheet here 
 */
-nav.navbar.navbar-expand-lg.navbar-dark.bg-dark { height: 60px; }
+/* nav.navbar.navbar-expand-lg.navbar-dark.bg-dark { height: 60px; } */
+
+.navbar-text {
+    display: inline-block;
+    padding-top: .0rem !important; 
+    padding-bottom: .0rem !important;
+}
 footer { padding: 10 0; }
 body { margin-bottom: 60; }
 .container-fluid, .container { margin-top: 30px !important; }
