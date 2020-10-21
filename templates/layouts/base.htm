@@ -1,3 +1,4 @@
+<!-- this layout is for unauthenticated users -->
 <html>
   <head>
     <title>{% block title %}{% endblock %}</title>
@@ -22,7 +23,12 @@
         </ul>
         <span class="navbar-text">
           <ul class="navbar-nav mr-auto">
-              {% block right_nav %}{% endblock %}
+            <li class="nav-item">
+              <a class="nav-link {% block login_active %}{% endblock %}" href="{{ url_for('login') }}">Login</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link {% block register_active %}{% endblock %}" href="{{ url_for('register') }}">Register</a>
+          </li>
           </ul>
           
         </span>
