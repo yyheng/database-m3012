@@ -1,1 +1,49 @@
 <!-- this layout is for authenticated users -->
+<!-- this layout is for unauthenticated users -->
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}" />
+    <!-- Chart Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Chart.min.css') }}"/>
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="{{ url_for('article') }}">NewsAPI</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <!-- home is article.htm -->
+          <li class="nav-item {% block home_active %}{% endblock %}">
+            <a class="nav-link" href="{{ url_for('article') }}">Home<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+            {% block right_nav %}{% endblock %}
+        </span>
+      </div>
+    </nav>
+  </head>
+
+  <body class="d-flex flex-column min-vh-100">
+    <content>
+      {% block content %}{% endblock %}
+    </content>
+
+    <footer class="fixed-bottom bg-light text-center padding-20">
+        <small>&copy; Copyright 2020, Singapore Institude of Technology 2103 Team 16. All Rights Reserved. </small>
+    </footer>
+    <!-- Chart JS -->
+    <script src="{{ url_for('static', filename='Chart.min.js') }}"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{ url_for('static', filename='jquery-3.5.1.min.js') }}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    
+    {%block js %}{% endblock %}
+  </body>
+</html>
