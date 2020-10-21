@@ -20,7 +20,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
-        <!-- home is user_article.htm -->
+        <!-- home is article.htm in base.htm for unauthenticated users -->
         <li class="nav-item {% block home_active %}{% endblock %}">
           <a class="nav-link" href="{{ url_for('article') }}">Home<span class="sr-only">(current)</span></a>
         </li>
