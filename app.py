@@ -34,12 +34,12 @@ def user_dashboard():
 def user_article():
     return render_template("main/user_article.htm")
 
-#return route to user favourite view
-@app.route("/user_favourite")
-def user_favourite():
-    return render_template("main/user_favourite.htm")
+#return route to user favourite view, profile, privillege, etc
+@app.route("/user_profile")
+def user_profile():
+    return render_template("main/user_profile.htm")
 
-#return route to user favourite view
+#return route to user purchase view
 @app.route("/user_purchase")
 def user_purchase():
     return render_template("main/user_purchase.htm")
