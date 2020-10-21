@@ -9,18 +9,22 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="{{ url_for('index') }}">NewsAPI</a>
+      <a class="navbar-brand" href="{{ url_for('article') }}">NewsAPI</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('index') }}">Home<span class="sr-only">(current)</span></a>
+          <!-- home is article.htm -->
+          <li class="nav-item {% block home_active %}{% endblock %}">
+            <a class="nav-link" href="{{ url_for('article') }}">Home<span class="sr-only">(current)</span></a>
           </li>
         </ul>
         <span class="navbar-text">
-          {% block login %}{% endblock %}
+          <ul class="navbar-nav mr-auto">
+              {% block right_nav %}{% endblock %}
+          </ul>
+          
         </span>
       </div>
     </nav>
