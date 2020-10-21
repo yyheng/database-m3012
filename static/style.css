@@ -2,5 +2,6 @@
     custom stylesheet here 
 */
 footer { padding: 10 0; }
-nav { height: 60; margin-bottom: 30; }
+nav { height: 60; }
 body { margin-bottom: 60; }
+.container-fluid, .container { margin-top: 30px !important; }
