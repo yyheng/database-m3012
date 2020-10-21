@@ -1,5 +1,13 @@
 {% extends "layouts/base.htm" %}
 {% block title %}User Login{% endblock %}
+{% block right_nav %}
+<li class="nav-item active">
+    <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+</li>
+{% endblock %}
 {% block content %}
 <div class="container card">
     <form class="card-body">
