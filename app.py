@@ -55,6 +55,11 @@ def user_privilege():
 def admin_dashboard():
     return render_template("main/admin_dashboard.htm")
 
+
+@app.route("/test")
+def test():
+    return render_template("main/test.htm")
+
 #run application
 if __name__ == '__main__':
     app.run(debug = True)
