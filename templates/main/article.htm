@@ -3,14 +3,6 @@
 {% extends "layouts/base.htm" %}
 {% block title %}Home{% endblock %}
 {% block home_active %}active{% endblock %}
-{% block right_nav %}
-<li class="nav-item">
-    <a class="nav-link" href="{{ url_for('login') }}">Login</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="{{ url_for('register') }}">Register</a>
-</li>
-{% endblock %}
 {% block content %}
 <div class="container-fluid">
     <div class="card">
