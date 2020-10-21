@@ -13,11 +13,11 @@
                     <h4 class="card-title">Profile</h4>
                     <span>
                         <p>Email Address: <strong>test@sit.singaporetech.edu.sg</strong></p>
+                        <p>User privilege: <strong class="text-danger">FREE</strong></p>
+                        <div class="alert alert-danger" role="alert">
+                            Your user privilege is currently <strong>FREE</strong>, click <a href="{{ url_for('user_privilege') }}">here</a> to view more information on our privileges tiers!
+                        </div>
                     </span>
-                    <h5>User privilege: <strong class="text-danger">FREE</strong></h5>
-                    <div class="alert alert-danger" role="alert">
-                        Your user privilege is currently <strong>FREE</strong>, click <a href="{{ url_for('user_privilege') }}">here</a> to view more information on our privileges tiers!
-                    </div>
                 </form>
             </div>
         </div>
