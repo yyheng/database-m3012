@@ -10,5 +10,5 @@
 
 
 ### NLTK
-1. pip install nltk`
+1. pip install nltk
 2. pip install vaderSentiment
