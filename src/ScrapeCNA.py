@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+from src.SentimentTest1 import SentimentAnalyse
 
 def ScrapeCNA():
     contentlinks = []
@@ -14,6 +15,7 @@ def ScrapeCNA():
     for links in contentlinks:
         print("----------------------")
         print("https://www.channelnewsasia.com/" + links)
+        #Find Author
         contentpage = requests.get("https://www.channelnewsasia.com/" + links)
         soup = BeautifulSoup(contentpage.content, 'html.parser')
         author_results = soup.find("a", class_="article__author-title")
@@ -23,15 +25,21 @@ def ScrapeCNA():
                 if string != "By":
                     print(repr(string))
 
+        #Find Content
         content_result = soup.find("div", class_="c-rte--article")
         if content_result == None:
             continue
         content_result = content_result.findAll("p")
+        x = 0
         for i in content_result:
             if i.find(class_='c-picture--article'):
                 continue
+            x += SentimentAnalyse(i.getText())
             print(i.getText())
-
+        print(x)
+        #Find Date
+        Dateresult = soup.find("time", class_="article__details-item")
+        print(Dateresult.getText())
 
 ScrapeCNA()
 
