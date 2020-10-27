@@ -17,4 +17,16 @@
         <span><small>Not Registered? Register <a href="{{ url_for('register') }}">here</a>. </small></span>
       </form>
 </div>
+
+<div class="container card">
+  <!-- this can be removed, for testing purposes -->
+  <!-- print out all login information here -->
+  {% for user in userInfo %}
+  {{user[1]}}
+  {{user[2]}}
+  {{user[3]}}
+  {{user[4]}}
+  {{user[5]}}
+  {% endfor %}
+</div>
 {% endblock %}
