@@ -25,6 +25,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -44,8 +51,9 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.ScrapeCNA">
+  <component name="RunManager" selected="Python.UserFunctions">
     <configuration name="ScrapeCNA" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="database-m3012" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -90,14 +98,63 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="UserFunctions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="database-m3012" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/UserFunctions.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main(pak)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="database-m3012" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main(pak).py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.UserFunctions" />
+        <item itemvalue="Python.main(pak)" />
         <item itemvalue="Python.ScrapeCNA" />
         <item itemvalue="Python.SentimentTest1" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="efae0dc4-ac07-493b-90c2-b1281ffbfd78" name="Default Changelist" comment="" />
@@ -109,45 +166,53 @@
       <workItem from="1603526995905" duration="32000" />
       <workItem from="1603543614440" duration="3319000" />
       <workItem from="1603722407856" duration="5370000" />
+      <workItem from="1603895724461" duration="90000" />
+      <workItem from="1603895852395" duration="9150000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="550" y="216" key="FileChooserDialogImpl" timestamp="1603553956123">
-      <screen x="0" y="0" width="1536" height="920" />
+    <state x="733" y="261" key="FileChooserDialogImpl" timestamp="1603903725035">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="550" y="216" key="FileChooserDialogImpl/0.0.1536.920@0.0.1536.920" timestamp="1603553956123" />
-    <state width="1497" height="243" key="GridCell.Tab.0.bottom" timestamp="1603727717642">
-      <screen x="0" y="0" width="1536" height="920" />
+    <state x="733" y="261" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1603903725035" />
+    <state width="2005" height="305" key="GridCell.Tab.0.bottom" timestamp="1603905535226">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1497" height="243" key="GridCell.Tab.0.bottom/0.0.1536.920@0.0.1536.920" timestamp="1603727717642" />
-    <state width="1497" height="243" key="GridCell.Tab.0.center" timestamp="1603727717642">
-      <screen x="0" y="0" width="1536" height="920" />
+    <state width="2005" height="305" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1603905535226" />
+    <state width="2005" height="305" key="GridCell.Tab.0.center" timestamp="1603905535226">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1497" height="243" key="GridCell.Tab.0.center/0.0.1536.920@0.0.1536.920" timestamp="1603727717642" />
-    <state width="1497" height="243" key="GridCell.Tab.0.left" timestamp="1603727717642">
-      <screen x="0" y="0" width="1536" height="920" />
+    <state width="2005" height="305" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1603905535226" />
+    <state width="2005" height="305" key="GridCell.Tab.0.left" timestamp="1603905535226">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1497" height="243" key="GridCell.Tab.0.left/0.0.1536.920@0.0.1536.920" timestamp="1603727717642" />
-    <state width="1497" height="243" key="GridCell.Tab.0.right" timestamp="1603727717642">
-      <screen x="0" y="0" width="1536" height="920" />
+    <state width="2005" height="305" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1603905535226" />
+    <state width="2005" height="305" key="GridCell.Tab.0.right" timestamp="1603905535226">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1497" height="243" key="GridCell.Tab.0.right/0.0.1536.920@0.0.1536.920" timestamp="1603727717642" />
+    <state width="2005" height="305" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1603905535226" />
     <state width="1497" height="301" key="GridCell.Tab.1.bottom" timestamp="1603727061136">
       <screen x="0" y="0" width="1536" height="920" />
     </state>
@@ -164,10 +229,20 @@
       <screen x="0" y="0" width="1536" height="920" />
     </state>
     <state width="1497" height="301" key="GridCell.Tab.1.right/0.0.1536.920@0.0.1536.920" timestamp="1603727061136" />
+    <state x="533" y="200" key="SettingsEditor" timestamp="1603896043127">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="533" y="200" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1603896043127" />
+    <state x="721" y="382" key="com.intellij.ide.util.TipDialog" timestamp="1603895993188">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="721" y="382" key="com.intellij.ide.util.TipDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1603895993188" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/database_m3012$SentimentTest1.coverage" NAME="SentimentTest1 Coverage Results" MODIFIED="1603474543342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/database_m3012$UserFunctions.coverage" NAME="UserFunctions Coverage Results" MODIFIED="1603905535221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/database_m3012$ScrapeCNA.coverage" NAME="ScrapeCNA Coverage Results" MODIFIED="1603727717637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/database_m3012$main_pak_.coverage" NAME="main(pak) Coverage Results" MODIFIED="1603901893664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/database_m3012$SentimentTest1.coverage" NAME="SentimentTest1 Coverage Results" MODIFIED="1603474543342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/database_m3012$NewsAPI.coverage" NAME="ScrapeCNA Coverage Results" MODIFIED="1603474537680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

@@ -45,10 +45,10 @@ def ScrapeCNA(category):
             AgencyID = 2
             CategoryID = category
             print("----------------------")
-            print("https://www.channelnewsasia.com/" + links)
-            ArticleURL = "https://www.channelnewsasia.com/" + links
+            print("https://www.channelnewsasia.com" + links)
+            ArticleURL = "https://www.channelnewsasia.com" + links
             #Find Author
-            contentpage = requests.get("https://www.channelnewsasia.com/" + links)
+            contentpage = requests.get("https://www.channelnewsasia.com" + links)
             soup = BeautifulSoup(contentpage.content, 'html.parser')
             author_results = soup.find("a", class_="article__author-title")
 

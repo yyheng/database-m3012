@@ -1,18 +1,22 @@
 from flask import Flask, redirect, url_for, render_template
-from flask_mysqldb import MySQL
+import mysql.connector as mysql
+
+from src.UserFunctions import UserAuth
+
+#UserName: test PW:123 Admin
 
 app = Flask(
     __name__, 
     template_folder="templates",
     )
 
-# configure database connection here using flask_mysqldb instead
-app.config['MYSQL_HOST'] = "rm-gs595dd89hu8175hl6o.mysql.singapore.rds.aliyuncs.com"
-app.config['MYSQL_USER'] = "ict1902698psk"
-app.config['MYSQL_PASSWORD'] = "KSP8962091"
-app.config['MYSQL_DB'] = "sql1902698psk"
-
-mysql = MySQL(app)
+db = mysql.connect(
+    host ="rm-gs595dd89hu8175hl6o.mysql.singapore.rds.aliyuncs.com",
+    user ="ict1902698psk",
+    passwd ="KSP8962091",
+    database = "sql1902698psk"
+)
+cursor = db.cursor()
 
 ########################### MAIN ###########################
 #return route to index view
@@ -24,12 +28,7 @@ def article():
 #return route to login view
 @app.route("/login")
 def login():
-    cur = mysql.connection.cursor()
-    user = cur.execute("SELECT * FROM user")
-
-    if user > 0:
-        userInfo = cur.fetchall()
-        
+        UserAuth()
         return render_template("main/login.htm", userInfo=userInfo)
 
 #return route to register view

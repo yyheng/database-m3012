@@ -36,8 +36,7 @@ def stCrawl(url,pageCount):
         articlePage = urllib.request.urlopen('https://www.straitstimes.com'+link)
         soup = bs.BeautifulSoup(articlePage,'lxml')
 
-        article = stArticle("title", "author", "date", "content", 'https://www.straitstimes.com'+link)
-
+        article = stArticle("title", "author", "date", "content", 'https://www.straitstimes.com' + link)
         #print(soup.find_all('p'))
         contentParent = soup.find_all(attrs={"itemprop":"articleBody"})
         for eleParent in contentParent:
@@ -46,15 +45,18 @@ def stCrawl(url,pageCount):
                 ###### HELP #### somehow got "content" inserted
                 if eleChild.text != "content":
                     article.content = article.content + "\n" + eleChild.text
-        
+
+
+
         #print (article.content)
         article.title = soup.find_all(attrs={"itemprop":"name"})[0]['content']
         if not soup.find("meta", property="article:author") is None:
             article.author = soup.find("meta", property="article:author")['content']
         else:
-            article.author = "Not available"
+            article.author = "2"
         article.date = soup.find(attrs={"property":"article:published_time"})['content']
-        stArticlesList.append(article)
+        if article.content != "content":
+            stArticlesList.append(article)
 
     return stArticlesList
 
@@ -74,7 +76,7 @@ def todayCrawl(keyword,pageCount):
             if not node.get('node').get('author') is "":
                 article.author = node.get('node').get('author')
             else:
-                article.author = "Not available"
+                article.author = "2"
             article.date = node.get('node').get('publication_date')
             article.title = node.get('node').get('title')
             article.url = node.get('node').get('node_url')
@@ -108,27 +110,28 @@ def todayCrawl(keyword,pageCount):
     #         if eleParent.text != "content":
     #             article.content = article.content + "\n" + eleParent.text        
     #     print(soup)
-
-
-
-
     return todayArticlesList
 
+#
+# STarticles = stCrawl("https://www.straitstimes.com/business/economy?page=",5)
+# for article in STarticles:
+#     print("Title is "+article.title)
+#     print("author is "+article.author)
+#     print(article.content[7:-1])
+#     print("date is "+article.date)
+#     print("url is "+article.url)
 
-test = stCrawl("https://www.straitstimes.com/business/economy?page=",1)
-for a in test:
-    print(a.title)
-    print(a.author)
-    #print(a.content[7:-1])
-    print(a.date)
 
 
-
-test = todayCrawl("health",1)
-for a in test:
-    print(a.title)
-    print(a.author)
-    #print(a.content[7:-1])
-    print(a.date)
-    print(a.url)
+Tarticles = todayCrawl("health",5)
+for article in Tarticles:
+    print(article.title)
+    print(article.author)
+    print(article.content[7:-1])
+    print(article.date)
+    print(article.url)
     print("\n")
+    # query = "INSERT INTO article VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+    # val = (0, ArticleURL, ArticleTitle, ArticleDate, SentimentRating, ArticleText, "2", AgencyID, CategoryID)
+    # cursor.execute(query, val)
+
