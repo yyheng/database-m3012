@@ -30,7 +30,6 @@ def stCrawl(url,pageCount):
         mainPage = urllib.request.urlopen(url+str(pagenum))
         soup = bs.BeautifulSoup(mainPage,'lxml')
         for link in soup.find_all("span", class_="story-headline"):
-            #print (link.findChild()['href'])
             stURLsList.append(link.findChild()['href'])
 
     for link in stURLsList:
@@ -39,26 +38,24 @@ def stCrawl(url,pageCount):
         soup = bs.BeautifulSoup(articlePage,'lxml')
 
         article = stArticle("title", "author", "date", "", 'https://www.straitstimes.com' + link)
-        #print(soup.find_all('p'))
+
         contentParent = soup.find_all(attrs={"itemprop":"articleBody"})
         for eleParent in contentParent:
             for eleChild in eleParent.find_all('p'):
-                #print(ele.text)
-                ###### HELP #### somehow got "content" inserted
-                if eleChild.text != "content":
+                if eleChild.text != "":
                     article.content = article.content + "\n" + eleChild.text
 
-
-
-        #print (article.content)
         article.title = soup.find_all(attrs={"itemprop":"name"})[0]['content']
         if not soup.find("meta", property="article:author") is None:
             article.author = soup.find("meta", property="article:author")['content']
         else:
             article.author = "2"
-        article.date = soup.find(attrs={"property":"article:published_time"})['content']
-        if article.content != "content":
-            stArticlesList.append(article)
+        date = soup.find(attrs={"property":"article:published_time"})['content']
+        print(date)
+        datetime.datetime.fromisoformat(date)
+####################????????????????
+        article.date = date
+        stArticlesList.append(article)
 
     return stArticlesList
 
