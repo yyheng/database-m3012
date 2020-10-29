@@ -28,7 +28,7 @@ def ScrapeCNA(category):
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:77.0) Gecko/20100101 Firefox/77.0',
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36',
     ]
-    for i in range(5):
+    for i in range(2):
         user_agent = random.choice(user_agent_list)
         page = requests.get("https://www.channelnewsasia.com/action/news/8396414/search?q={0}&page={1}".format(search,i), headers={'User-Agent': user_agent})
         soup = BeautifulSoup(page.content, 'html.parser')
@@ -88,6 +88,6 @@ def ScrapeCNA(category):
             print(ArticleTitle)
     db.commit()
 
-ScrapeCNA(3)
+ScrapeCNA(1)
 
 
