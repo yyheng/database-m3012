@@ -2,6 +2,8 @@ import bs4 as bs
 import urllib.request
 import json
 import re
+from datetime import datetime
+#from src.SentimentTest1 import SentimentAnalyse
 
 class stArticle:
     def __init__(self, title, author, date, content, url):
@@ -36,7 +38,7 @@ def stCrawl(url,pageCount):
         articlePage = urllib.request.urlopen('https://www.straitstimes.com'+link)
         soup = bs.BeautifulSoup(articlePage,'lxml')
 
-        article = stArticle("title", "author", "date", "content", 'https://www.straitstimes.com' + link)
+        article = stArticle("title", "author", "date", "", 'https://www.straitstimes.com' + link)
         #print(soup.find_all('p'))
         contentParent = soup.find_all(attrs={"itemprop":"articleBody"})
         for eleParent in contentParent:
@@ -72,12 +74,12 @@ def todayCrawl(keyword,pageCount):
 
         #print(url_json)
         for node in url_json['nodes']:
-            article = todayArticle("title", "author", "date", "content", "link")
+            article = todayArticle("title", "author", "date", "", "link")
             if not node.get('node').get('author') is "":
                 article.author = node.get('node').get('author')
             else:
                 article.author = "2"
-            article.date = node.get('node').get('publication_date')
+            article.date = datetime.utcfromtimestamp(int(node.get('node').get('publication_date'))).strftime('%Y-%m-%d')
             article.title = node.get('node').get('title')
             article.url = node.get('node').get('node_url')
             #print(node.get('node').get('title'))
@@ -112,26 +114,31 @@ def todayCrawl(keyword,pageCount):
     #     print(soup)
     return todayArticlesList
 
-#
-# STarticles = stCrawl("https://www.straitstimes.com/business/economy?page=",5)
-# for article in STarticles:
-#     print("Title is "+article.title)
-#     print("author is "+article.author)
-#     print(article.content[7:-1])
-#     print("date is "+article.date)
-#     print("url is "+article.url)
 
+count = 1
 
+STarticles = stCrawl("https://www.straitstimes.com/business/economy?page=",5)
+for article in STarticles:
+    count+=1
+    print("Title is "+article.title)
+    print("author is "+article.author)
+    print(article.content)
+    print("date is "+article.date)
+    print("url is "+article.url)
+    print("==============================================================================\n")
 
-Tarticles = todayCrawl("health",5)
+'''
+Tarticles = todayCrawl("health",1)
 for article in Tarticles:
+    print(count)
     print(article.title)
     print(article.author)
-    print(article.content[7:-1])
+    print(article.content)
     print(article.date)
     print(article.url)
-    print("\n")
+    count+=1
+    print("==============================================================================\n")
     # query = "INSERT INTO article VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
     # val = (0, ArticleURL, ArticleTitle, ArticleDate, SentimentRating, ArticleText, "2", AgencyID, CategoryID)
     # cursor.execute(query, val)
-
+'''
