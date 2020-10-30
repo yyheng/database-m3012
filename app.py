@@ -106,8 +106,6 @@ def register_post():
             UserCreate(db, cursor, reg_username, reg_pw)
             flash('Account successfully created.')
     flash('Account exist.')
-
-
     return redirect(url_for('register'))
 
 

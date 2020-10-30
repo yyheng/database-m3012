@@ -12,6 +12,7 @@ cursor = db.cursor()
 
 def UserAuth(cursor, Username, Password):
     query = "SELECT * FROM user WHERE user.UserName = '{0}' AND UserPw = MD5('{1}')".format(Username,Password)
+    cursor = db.cursor(buffered=True)
     cursor.execute(query)
     result = cursor.fetchone()
     return result
@@ -24,5 +25,5 @@ def UserCreate(db, cursor, UserName, Password):
     return True
 
 
-#print(UserAuth(cursor,"test","123"))
+# print(UserAuth(cursor,"test2","123"))
 # UserCreate(cursor,"anothertest","1234")
