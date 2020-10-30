@@ -78,7 +78,9 @@ def login_post():
         session['id'] = UserAuth(cursor, username, password)[0]
         session['username'] = UserAuth(cursor, username, password)[1]
 
-        # check whether if account is administrator account with username 'admin'
+        # check whether if account is administrator is admin
+        # 0 is not admin
+        # 1 is admin
         if (UserAuth(cursor, username, password)[4] == 1):
             session['is_admin'] = True
 
