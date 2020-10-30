@@ -65,13 +65,14 @@ def login_post():
     username = request.form.get('usernameTB')
     password = request.form.get('passwordTB')
     
-    if UserAuth(cursor, username, password):
+    account = UserAuth(cursor, username, password)
+    if account:
         session['logged_in'] = True
         session['id'] = UserAuth(cursor, username, password)[0]
         session['username'] = UserAuth(cursor, username, password)[1]
 
         # Redirect to home page
-        return render_template('main/user_profile.htm', username=session['username'])
+        return render_template('main/user_profile.htm', account=account)
     else:
         flash('Please check your login details and try again.')
         session.clear()
