@@ -29,17 +29,24 @@ db = mysql.connect(
 )
 cursor = db.cursor()
 
-
+# ensure page is login
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
         if 'logged_in' in session:
             return f(*args, **kwargs)
         else:
-            flash("You need to login first")
             return redirect(url_for('login'))
 
     return wrap
+
+# ensure page is logout and clear session
+@app.route("/logout")
+@login_required
+def logout():
+    session.clear()
+    flash("You have been logged out!")
+    return redirect(url_for('login'))
 
 ########################### MAIN ###########################
 #return route to index view
@@ -64,9 +71,11 @@ def login_post():
         session['username'] = UserAuth(cursor, username, password)[1]
 
         # Redirect to home page
-        return redirect(url_for('user_article'))
+        return render_template('main/user_profile.htm', username=session['username'])
     else:
         flash('Please check your login details and try again.')
+        session.clear()
+        
     return redirect(url_for('login'))
 
 #return route to register view
@@ -78,32 +87,32 @@ def register():
 #return route to user dashboard view
 @app.route("/user_dashboard")
 def user_dashboard():
-    return render_template("main/user_dashboard.htm")
+    return render_template("main/user_dashboard.htm", username=session['username'])
 
 
 #return route to user article view
 @app.route("/user_article")
 @login_required
 def user_article():
-    return render_template("main/user_article.htm")
+    return render_template("main/user_article.htm", username=session['username'])
 
 #return route to user favourite view, profile, privillege, etc
 @app.route("/user_profile")
 @login_required
 def user_profile():
-    return render_template("main/user_profile.htm")
+    return render_template("main/user_profile.htm", username=session['username'])
 
 #return route to user purchase view
 @app.route("/user_purchase")
 @login_required
 def user_purchase():
-    return render_template("main/user_purchase.htm")
+    return render_template("main/user_purchase.htm", username=session['username'])
 
 #return route to user purchase view
 @app.route("/user_privilege")
 @login_required
 def user_privilege():
-    return render_template("main/user_privilege.htm")
+    return render_template("main/user_privilege.htm", username=session['username'])
 
 ####################### ADMINISTRATOR #######################
 #return route to admin dashboard view
