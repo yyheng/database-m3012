@@ -46,7 +46,7 @@ def admin_login_required(f):
         if 'logged_in' and 'is_admin' in session:
             return f(*args, **kwargs)
         else:
-            flash('You are unauthorized to view this page')
+            flash('You are unauthorized to view this page, please login as administrator.')
             return redirect(url_for('login'))
     return wrap
 
@@ -81,6 +81,7 @@ def login_post():
         session['id'] = UserAuth(cursor, username, password)[0]
         session['username'] = UserAuth(cursor, username, password)[1]
 
+        # check whether if account is administrator account with username 'admin'
         if (UserAuth(cursor, username, password)[1] == 'admin'):
             session['is_admin'] = True
 
