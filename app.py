@@ -72,7 +72,7 @@ def login_post():
         session['username'] = UserAuth(cursor, username, password)[1]
 
         # Redirect to home page
-        return render_template('main/user_profile.htm', account=account)
+        return render_template('main/user_profile.htm', username=session['username'])
     else:
         flash('Please check your login details and try again.')
         session.clear()
