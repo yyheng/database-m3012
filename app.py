@@ -1,4 +1,5 @@
-from flask import Flask, redirect, url_for, render_template
+from flask import Flask, redirect, url_for, render_template, request, flash, session
+from flask_login import login_user, login_required, current_user
 import mysql.connector as mysql
 
 from src.UserFunctions import UserAuth
@@ -9,6 +10,7 @@ app = Flask(
     __name__, 
     template_folder="templates",
     )
+app.secret_key = "super secret key"
 
 db = mysql.connect(
     host ="rm-gs595dd89hu8175hl6o.mysql.singapore.rds.aliyuncs.com",
@@ -28,8 +30,23 @@ def article():
 #return route to login view
 @app.route("/login")
 def login():
-        UserAuth()
-        return render_template("main/login.htm", userInfo=userInfo)
+        return render_template("main/login.htm")
+
+#login route input view
+@app.route('/login', methods=['POST'])
+def login_post():
+    username = request.form.get('usernameTB')
+    password = request.form.get('passwordTB')
+
+    # flash(username)
+    # return redirect(url_for('login'))
+
+    if not UserAuth(cursor, username, password):
+        flash('Please check your login details and try again.')
+        return redirect(url_for('login'))
+    login_user(username)
+    return redirect(url_for('user_article'))
+        
 
 #return route to register view
 @app.route("/register")
@@ -45,6 +62,7 @@ def user_dashboard():
 
 #return route to user article view
 @app.route("/user_article")
+@login_required
 def user_article():
     return render_template("main/user_article.htm")
 
