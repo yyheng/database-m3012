@@ -40,7 +40,7 @@ def login_required(f):
     return wrap
 
 # ensure page is login (for administrators)
-def login_required(f):
+def admin_login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
         if 'logged_in' and 'is_admin' in session:
