@@ -12,8 +12,14 @@
                 <form class="card-body">
                     <h4 class="card-title">Profile</h4>
                     <span>
-                        <p>Email Address: <strong>test@sit.singaporetech.edu.sg</strong></p>
                         <p>User privilege: <strong class="text-danger">FREE</strong></p>
+                        <p>Account Type: <strong class="text-danger">
+                            {% if session['is_admin'] %}
+                                Administrator
+                            {% else %}
+                                User
+                            {% endif %}
+                        </strong></p>
                         <div class="alert alert-danger" role="alert">
                             Your user privilege is currently <strong>FREE</strong>, click <a href="{{ url_for('user_privilege') }}">here</a> to view more information on our privileges tiers!
                         </div>
