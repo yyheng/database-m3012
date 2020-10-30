@@ -13,10 +13,6 @@ app = Flask(
     )
 app.secret_key = 'secretkeyhere'
 
-# login_manager = LoginManager()
-# login_manager.init_app(app)
-# login_manager.login_view = 'login'
-
 #run application
 if __name__ == '__main__':
     app.run(debug = True)
@@ -58,6 +54,7 @@ def logout():
     flash("You have been logged out!")
     return redirect(url_for('login'))
 
+
 ########################### MAIN ###########################
 #return route to index view
 @app.route("/")
@@ -98,12 +95,12 @@ def login_post():
 def register():
     return render_template("main/register.htm")
 
+
 ########################### USER ###########################
 #return route to user dashboard view
 @app.route("/user_dashboard")
 def user_dashboard():
     return render_template("main/user_dashboard.htm", username=session['username'])
-
 
 #return route to user article view
 @app.route("/user_article")
@@ -128,6 +125,7 @@ def user_purchase():
 @login_required
 def user_privilege():
     return render_template("main/user_privilege.htm", username=session['username'])
+
 
 ####################### ADMINISTRATOR #######################
 #return route to admin dashboard view
