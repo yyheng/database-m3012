@@ -3,7 +3,7 @@ from flask_login import login_user, current_user, LoginManager, login_manager
 import mysql.connector as mysql
 from functools import wraps
 
-from src.UserFunctions import UserAuth
+from src.UserFunctions import UserAuth, UserCreate
 
 #UserName: test PW:123 Admin
 
@@ -94,6 +94,21 @@ def login_post():
 @app.route("/register")
 def register():
     return render_template("main/register.htm")
+
+@app.route("/register", methods=['POST'])
+def register_post():
+    reg_username = request.form.get('reg_usernameTB')
+    reg_pw = request.form.get('reg_pwTB')
+    reg_conpw = request.form.get('confirm_pwTB')
+
+    if (reg_pw == reg_conpw):
+        if (UserAuth(cursor, reg_username, reg_pw) == None):
+            UserCreate(db, cursor, reg_username, reg_pw)
+            flash('Account successfully created.')
+    flash('Account exist.')
+
+
+    return redirect(url_for('register'))
 
 
 ########################### USER ###########################
