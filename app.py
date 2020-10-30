@@ -46,6 +46,7 @@ def admin_login_required(f):
         if 'logged_in' and 'is_admin' in session:
             return f(*args, **kwargs)
         else:
+            flash('You are unauthorized to view this page')
             return redirect(url_for('login'))
     return wrap
 
@@ -79,6 +80,9 @@ def login_post():
         session['logged_in'] = True
         session['id'] = UserAuth(cursor, username, password)[0]
         session['username'] = UserAuth(cursor, username, password)[1]
+
+        if (UserAuth(cursor, username, password)[1] == 'admin'):
+            session['is_admin'] = True
 
         # Redirect to home page
         return render_template('main/user_profile.htm', username=session['username'])
@@ -127,7 +131,7 @@ def user_privilege():
 ####################### ADMINISTRATOR #######################
 #return route to admin dashboard view
 @app.route("/admin_dashboard")
-@login_required
+@admin_login_required
 def admin_dashboard():
-    return render_template("main/admin_dashboard.htm")
+    return render_template("main/admin_dashboard.htm", username=session['username'])
 
