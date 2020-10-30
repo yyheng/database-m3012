@@ -29,7 +29,7 @@ db = mysql.connect(
 )
 cursor = db.cursor()
 
-# ensure page is login
+# ensure page is login (for users)
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
@@ -37,7 +37,16 @@ def login_required(f):
             return f(*args, **kwargs)
         else:
             return redirect(url_for('login'))
+    return wrap
 
+# ensure page is login (for administrators)
+def login_required(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'logged_in' and 'is_admin' in session:
+            return f(*args, **kwargs)
+        else:
+            return redirect(url_for('login'))
     return wrap
 
 # ensure page is logout and clear session
