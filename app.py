@@ -4,6 +4,7 @@ import mysql.connector as mysql
 from functools import wraps
 
 from src.UserFunctions import UserAuth, UserCreate
+from src.ArticlesFunction import SelectAllArticleTitle
 
 #UserName: test PW:123 Admin
 
@@ -60,7 +61,9 @@ def logout():
 @app.route("/")
 def article():
     #return redirect(url_for("index"))
-    return render_template("main/article.htm")
+    article = SelectAllArticleTitle(cursor)
+
+    return render_template("main/article.htm", article=article)
 
 #return route to login view
 @app.route("/login")
@@ -105,8 +108,9 @@ def register_post():
 
     if (reg_pw == reg_conpw):
         if (UserAuth(cursor, reg_username, reg_pw) == None):
-            UserCreate(db, cursor, reg_username, reg_pw)
-            flash('Account successfully created.')
+            if (UserAuth(cursor, reg_username, reg_pw)[1] != reg_username):
+                UserCreate(db, cursor, reg_username, reg_pw)
+                flash('Account successfully created.')
     flash('Account exist.')
     return redirect(url_for('register'))
 
