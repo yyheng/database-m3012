@@ -11,14 +11,14 @@ db = mysql.connect(
 cursor = db.cursor()
 
 def UserAuth(cursor, Username, Password):
-    query = "SELECT * FROM user WHERE user.UserName = '{0}' AND UserPw = MD5('{1}')".format(Username,Password)
+    query = "SELECT * FROM user WHERE user.UserName = '{0}' AND UserPw = SHA2('{1}',256)".format(Username,Password)
     cursor = db.cursor(buffered=True)
     cursor.execute(query)
     result = cursor.fetchone()
     return result
 
 def UserCreate(db, cursor, UserName, Password):
-    query = "INSERT INTO user VALUES (%s, %s, MD5(%s), DEFAULT(TierID), DEFAULT(isAdmin))"
+    query = "INSERT INTO user VALUES (%s, %s, SHA2(%s,256), DEFAULT(TierID), DEFAULT(isAdmin))"
     val = (0, UserName,Password)
     cursor.execute(query, val)
     db.commit()
