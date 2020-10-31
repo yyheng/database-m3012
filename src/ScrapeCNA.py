@@ -20,7 +20,6 @@ def ScrapeCNA(category):
         database="sql1902698psk"
     )
     cursor = db.cursor()
-    contentlinks = []
     user_agent_list = [
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Safari/605.1.15',
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:77.0) Gecko/20100101 Firefox/77.0',
@@ -28,9 +27,13 @@ def ScrapeCNA(category):
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:77.0) Gecko/20100101 Firefox/77.0',
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36',
     ]
-    for i in range(2):
+    for i in range(8):
+        contentlinks = []
+        print(i)
         user_agent = random.choice(user_agent_list)
-        page = requests.get("https://www.channelnewsasia.com/action/news/8396414/search?q={0}&page={1}".format(search,i), headers={'User-Agent': user_agent})
+        pageurl = "https://www.channelnewsasia.com/action/news/8396414/search?q={0}&page={1}".format(search,i)
+        print(pageurl)
+        page = requests.get(pageurl, headers={'User-Agent': user_agent})
         soup = BeautifulSoup(page.content, 'html.parser')
         results = soup.find_all("a", class_="teaser__title")
         for section in results:
@@ -78,15 +81,20 @@ def ScrapeCNA(category):
             Dateresult = soup.find("time", class_="article__details-item")
             datetime_object = datetime.strptime(Dateresult.getText(), '%d %b  %Y %I:%M%p')
             ArticleDate = datetime_object.strftime("%Y-%m-%d")
-            query = "INSERT INTO article VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-            val = (0,ArticleURL,ArticleTitle,ArticleDate,SentimentRating,ArticleText,"2",AgencyID,CategoryID)
-            cursor.execute(query, val)
-            print(ArticleDate)
-            print(ArticleText)
-            print(ArticleURL)
-            print(SentimentRating)
-            print(ArticleTitle)
-    db.commit()
+            try:
+                query = "INSERT INTO article VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,MD5(%s))"
+                val = (0,ArticleURL,ArticleTitle,ArticleDate,SentimentRating,ArticleText,"2",AgencyID,CategoryID, ArticleTitle)
+                cursor.execute(query, val)
+                print(ArticleDate)
+                print(ArticleText)
+                print(ArticleURL)
+                print(SentimentRating)
+                print(ArticleTitle)
+                db.commit()
+            except:
+                print("error")
+                print(ArticleTitle)
+                continue
 
 ScrapeCNA(1)
 
