@@ -56,7 +56,12 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.ScrapeCNA (1)">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Darin\OneDrive\Documents\database-m3012\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.ScrapeCNA">
     <configuration name="ArticlesFunction" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="database-m3012" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -79,7 +84,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ScrapeCNA (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ScrapeCNA" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="database-m3012" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -169,9 +174,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.ScrapeCNA (1)" />
-        <item itemvalue="Python.ArticlesFunction" />
         <item itemvalue="Python.ScrapeCNA" />
+        <item itemvalue="Python.ScrapeCNA" />
+        <item itemvalue="Python.ArticlesFunction" />
         <item itemvalue="Python.UserFunctions" />
         <item itemvalue="Python.main(pak)" />
       </list>
@@ -195,7 +200,8 @@
       <workItem from="1603895724461" duration="90000" />
       <workItem from="1603895852395" duration="9278000" />
       <workItem from="1603955458442" duration="3699000" />
-      <workItem from="1604149004921" duration="2869000" />
+      <workItem from="1604149004921" duration="4428000" />
+      <workItem from="1604153929273" duration="10979000" />
     </task>
     <servers />
   </component>
@@ -216,35 +222,43 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="752" y="184" key="#ScrapeCNA_(1)" timestamp="1604153944434">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="752" y="184" key="#ScrapeCNA_(1)/0.0.2048.1112@0.0.2048.1112" timestamp="1604153944434" />
     <state x="479" y="212" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604149791516">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="479" y="212" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1604149791516" />
+    <state x="763" y="360" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604158467785">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="763" y="360" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1604158467785" />
     <state x="733" y="261" key="FileChooserDialogImpl" timestamp="1603903725035">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="550" y="216" key="FileChooserDialogImpl/0.0.1536.920@0.0.1536.920" timestamp="1603553956123" />
     <state x="733" y="261" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1603903725035" />
-    <state width="2005" height="262" key="GridCell.Tab.0.bottom" timestamp="1604151815594">
+    <state width="2005" height="262" key="GridCell.Tab.0.bottom" timestamp="1604167133909">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1497" height="243" key="GridCell.Tab.0.bottom/0.0.1536.920@0.0.1536.920" timestamp="1603727717642" />
-    <state width="2005" height="262" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1604151815594" />
-    <state width="2005" height="262" key="GridCell.Tab.0.center" timestamp="1604151815594">
+    <state width="2005" height="262" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1604167133909" />
+    <state width="2005" height="262" key="GridCell.Tab.0.center" timestamp="1604167133909">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1497" height="243" key="GridCell.Tab.0.center/0.0.1536.920@0.0.1536.920" timestamp="1603727717642" />
-    <state width="2005" height="262" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1604151815594" />
-    <state width="2005" height="262" key="GridCell.Tab.0.left" timestamp="1604151815594">
+    <state width="2005" height="262" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1604167133909" />
+    <state width="2005" height="262" key="GridCell.Tab.0.left" timestamp="1604167133909">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1497" height="243" key="GridCell.Tab.0.left/0.0.1536.920@0.0.1536.920" timestamp="1603727717642" />
-    <state width="2005" height="262" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1604151815594" />
-    <state width="2005" height="262" key="GridCell.Tab.0.right" timestamp="1604151815594">
+    <state width="2005" height="262" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1604167133909" />
+    <state width="2005" height="262" key="GridCell.Tab.0.right" timestamp="1604167133909">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1497" height="243" key="GridCell.Tab.0.right/0.0.1536.920@0.0.1536.920" timestamp="1603727717642" />
-    <state width="2005" height="262" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1604151815594" />
+    <state width="2005" height="262" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1604167133909" />
     <state width="1497" height="301" key="GridCell.Tab.1.bottom" timestamp="1603727061136">
       <screen x="0" y="0" width="1536" height="920" />
     </state>
@@ -265,17 +279,17 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="533" y="200" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1603896043127" />
-    <state x="721" y="382" key="com.intellij.ide.util.TipDialog" timestamp="1604149005124">
+    <state x="721" y="382" key="com.intellij.ide.util.TipDialog" timestamp="1604153932335">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="721" y="382" key="com.intellij.ide.util.TipDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1604149005124" />
+    <state x="721" y="382" key="com.intellij.ide.util.TipDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1604153932335" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/database_m3012$UserFunctions.coverage" NAME="UserFunctions Coverage Results" MODIFIED="1603956200389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/database_m3012$main_pak_.coverage" NAME="main(pak) Coverage Results" MODIFIED="1603901893664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/database_m3012$ScrapeCNA.coverage" NAME="ScrapeCNA Coverage Results" MODIFIED="1603958390443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/database_m3012$ScrapeCNA.coverage" NAME="ScrapeCNA Coverage Results" MODIFIED="1604167133904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/database_m3012$SentimentTest1.coverage" NAME="SentimentTest1 Coverage Results" MODIFIED="1603474543342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/database_m3012$ScrapeCNA__1_.coverage" NAME="ScrapeCNA (1) Coverage Results" MODIFIED="1604151815588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/database_m3012$ScrapeCNA__1_.coverage" NAME="ScrapeCNA (1) Coverage Results" MODIFIED="1604153262382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/database_m3012$ArticlesFunction.coverage" NAME="ArticlesFunction Coverage Results" MODIFIED="1604149492901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/database_m3012$NewsAPI.coverage" NAME="ScrapeCNA Coverage Results" MODIFIED="1603474537680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
