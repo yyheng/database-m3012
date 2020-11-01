@@ -36,7 +36,9 @@ $(function() {
 
     $(window).on("scroll", function () {
         if ($(this).scrollTop() > 700) {
-            $("div.item").fadeIn(4000);
+            $("div.item").fadeIn(5000);
+        } else {
+            $("div.item:not(:eq(0))").slice(-70).hide();
         }
 });
 });
