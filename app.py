@@ -92,6 +92,9 @@ def login_post():
     else:
         flash('Please check your login details and try again.')
         session.clear()
+
+    if (username == "" or password == ""):
+        flash('Please enter login details')
         
     return redirect(url_for('login'))
 
@@ -108,10 +111,10 @@ def register_post():
 
     if (reg_pw == reg_conpw):
         if (UserAuth(cursor, reg_username, reg_pw) == None):
-            if (UserAuth(cursor, reg_username, reg_pw)[1] != reg_username):
-                UserCreate(db, cursor, reg_username, reg_pw)
-                flash('Account successfully created.')
-    flash('Account exist.')
+            UserCreate(db, cursor, reg_username, reg_pw)
+            flash('Account successfully created.')
+    else:
+        flash('Account exist.')
     return redirect(url_for('register'))
 
 
