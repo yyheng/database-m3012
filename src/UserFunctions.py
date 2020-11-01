@@ -23,11 +23,14 @@ def UserAuth(cursor, Username, Password):
     return result
 
 def UserCreate(db, cursor, UserName, Password):
-    query = "INSERT INTO user VALUES (%s, %s, SHA2(%s,256), DEFAULT(TierID), DEFAULT(isAdmin))"
-    val = (0, UserName,Password)
-    cursor.execute(query, val)
-    db.commit()
-    return True
+    try:
+        query = "INSERT INTO user VALUES (%s, %s, SHA2(%s,256), DEFAULT(TierID), DEFAULT(isAdmin))"
+        val = (0, UserName,Password)
+        cursor.execute(query, val)
+        db.commit()
+        return True
+    except:
+        return False
 
 
 

@@ -62,7 +62,7 @@
       <recent name="C:\Users\Darin\OneDrive\Documents\database-m3012\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.UserFunctions">
+  <component name="RunManager" selected="Python.ArticlesFunction">
     <configuration name="ArticlesFunction" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="database-m3012" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -175,15 +175,15 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.UserFunctions" />
         <item itemvalue="Python.ArticlesFunction" />
+        <item itemvalue="Python.UserFunctions" />
         <item itemvalue="Python.ScrapeCNA" />
         <item itemvalue="Python.ScrapeCNA" />
         <item itemvalue="Python.main(pak)" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -203,24 +203,24 @@
       <workItem from="1603955458442" duration="3699000" />
       <workItem from="1604149004921" duration="4428000" />
       <workItem from="1604153929273" duration="13391000" />
+      <workItem from="1604210453359" duration="659000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="752" y="184" key="#ScrapeCNA_(1)" timestamp="1604153944434">
@@ -286,12 +286,12 @@
     <state x="721" y="382" key="com.intellij.ide.util.TipDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1604153932335" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/database_m3012$UserFunctions.coverage" NAME="UserFunctions Coverage Results" MODIFIED="1604169648607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/database_m3012$main_pak_.coverage" NAME="main(pak) Coverage Results" MODIFIED="1603901893664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/database_m3012$ScrapeCNA.coverage" NAME="ScrapeCNA Coverage Results" MODIFIED="1604168551300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/database_m3012$ArticlesFunction.coverage" NAME="ArticlesFunction Coverage Results" MODIFIED="1604168899870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/database_m3012$SentimentTest1.coverage" NAME="SentimentTest1 Coverage Results" MODIFIED="1603474543342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/database_m3012$ScrapeCNA__1_.coverage" NAME="ScrapeCNA (1) Coverage Results" MODIFIED="1604153262382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/database_m3012$ArticlesFunction.coverage" NAME="ArticlesFunction Coverage Results" MODIFIED="1604168899870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/database_m3012$main_pak_.coverage" NAME="main(pak) Coverage Results" MODIFIED="1603901893664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/database_m3012$ScrapeCNA.coverage" NAME="ScrapeCNA Coverage Results" MODIFIED="1604168551300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/database_m3012$NewsAPI.coverage" NAME="ScrapeCNA Coverage Results" MODIFIED="1603474537680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/database_m3012$UserFunctions.coverage" NAME="UserFunctions Coverage Results" MODIFIED="1604169648607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>
