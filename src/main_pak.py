@@ -20,7 +20,7 @@ class todayArticle:
         self.date = date
         self.content = content
         self.url = url
-
+#asd
 def stCrawl(url,pageCount):
     #number of pages
     stURLsList = []
@@ -52,7 +52,7 @@ def stCrawl(url,pageCount):
             article.author = "2"
         date = soup.find(attrs={"property":"article:published_time"})['content']
         date = datetime.strptime(date[:-6], "%Y-%m-%dT%H:%M:%S").strftime('%Y-%m-%d')
-####################????????????????
+        ####################????????????????
         article.date = date
         stArticlesList.append(article)
 
