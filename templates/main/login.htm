@@ -2,31 +2,32 @@
 {% block title %}User Login{% endblock %}
 {% block login_active %}active{% endblock %}
 {% block content %}
+
 <div class="container card">
-    <form class="card-body">
+    <form class="card-body" method="POST" action="/login">
         <h4 class="card-title">User Login</h4>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+           <div class="form-group">
+             <!-- flash messages -->
+            
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-danger" role="alert">
+                  {{ message }}
+                  
+                </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+          <label for="exampleInputEmail1">Username</label>
+          <input type="text" class="form-control" name="usernameTB" id="usernameTB" placeholder="Enter username" required>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <input type="password" class="form-control" name="passwordTB" id="passwordTB" placeholder="Password" required>
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
         <span><small>Not Registered? Register <a href="{{ url_for('register') }}">here</a>. </small></span>
       </form>
-</div>
-
-<div class="container card">
-  <!-- this can be removed, for testing purposes -->
-  <!-- print out all login information here -->
-  {% for user in userInfo %}
-  {{user[1]}}
-  {{user[2]}}
-  {{user[3]}}
-  {{user[4]}}
-  {{user[5]}}
-  {% endfor %}
 </div>
 {% endblock %}

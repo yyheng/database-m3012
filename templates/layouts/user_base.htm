@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{ url_for('static', filename='jquery-3.5.1.min.js') }}"></script>
 </head>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -27,10 +29,16 @@
         <li class="nav-item {% block dashboard_active %}{% endblock %}">
           <a class="nav-link" href="{{ url_for('user_dashboard') }}">Dashboard<span class="sr-only">(current)</span></a>
         </li>
+        {% if session['is_admin'] %}
+        <li class="nav-item {% block admin_dashboard_active %}{% endblock %}">
+          <a class="nav-link" href="{{ url_for('admin_dashboard') }}">Admin Dashboard<span class="sr-only">(current)</span></a>
+        </li>
+        {% else %}
+        {% endif %}
       </ul>
       <span class="navbar-text">
           <span class="text-light">
-            Welcome, <strong><a href="{{ url_for('user_profile') }}">User</a></strong>
+            Welcome, <strong><a href="{{ url_for('user_profile') }}">{{ username }}</a></strong>
           {% block right_nav %}{% endblock %}
       </span>
     </div>
@@ -46,8 +54,6 @@
     </footer>
       <!-- Chart JS -->
       <script src="{{ url_for('static', filename='Chart.min.js') }}"></script>
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="{{ url_for('static', filename='jquery-3.5.1.min.js') }}"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
       {%block js %}{% endblock %}
