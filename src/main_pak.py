@@ -51,8 +51,7 @@ def stCrawl(url,pageCount):
         else:
             article.author = "2"
         date = soup.find(attrs={"property":"article:published_time"})['content']
-        print(date)
-        datetime.datetime.fromisoformat(date)
+        date = datetime.strptime(date[:-6], "%Y-%m-%dT%H:%M:%S").strftime('%Y-%m-%d')
 ####################????????????????
         article.date = date
         stArticlesList.append(article)
@@ -114,14 +113,16 @@ def todayCrawl(keyword,pageCount):
 
 count = 1
 
-STarticles = stCrawl("https://www.straitstimes.com/business/economy?page=",5)
+STarticles = stCrawl("https://www.straitstimes.com/business/economy?page=",10)
 for article in STarticles:
-    count+=1
+    
+    print(count)
     print("Title is "+article.title)
     print("author is "+article.author)
     print(article.content)
     print("date is "+article.date)
     print("url is "+article.url)
+    count+=1
     print("==============================================================================\n")
 
 '''
