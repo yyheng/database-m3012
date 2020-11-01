@@ -1,14 +1,14 @@
 import mysql.connector as mysql
 from datetime import datetime
 import hashlib
-
-db = mysql.connect(
-    host ="rm-gs595dd89hu8175hl6o.mysql.singapore.rds.aliyuncs.com",
-    user ="ict1902698psk",
-    passwd ="KSP8962091",
-    database = "sql1902698psk"
-)
-cursor = db.cursor()
+#
+# db = mysql.connect(
+#     host ="rm-gs595dd89hu8175hl6o.mysql.singapore.rds.aliyuncs.com",
+#     user ="ict1902698psk",
+#     passwd ="KSP8962091",
+#     database = "sql1902698psk"
+# )
+# cursor = db.cursor()
 
 def SelectAllArticleTitle(cursor):
     query = "SELECT a.ArticleID, a.ArticleTitle, a.ArticleDate, c.CategoryName, p.AgencyName FROM article a, articlecategory c, agency p WHERE a.AgencyID = p.AgencyID AND a.CategoryID = c.CategoryID ORDER BY a.ArticleDate DESC"
@@ -29,5 +29,16 @@ def SelectArticleDetails(cursor, articleID):
     listresult[1] = listresult[1].strftime("%d/%m/%Y")
     return listresult
 
-print(SelectArticleDetails(cursor,2427))
+def LikeArticle(db, cursor,userID,articleID):
+    try:
+        query = "INSERT into likedby VALUES (%s, %s)"
+        val = (userID, articleID)
+        cursor.execute(query, val)
+        db.commit()
+        return True
+    except:
+        return False
+
+#print(LikeArticle(db,cursor,7,2420))
+#print(SelectArticleDetails(cursor,2427))
 #print(SelectAllArticleTitle(cursor)[0])
