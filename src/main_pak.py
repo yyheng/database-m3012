@@ -20,7 +20,7 @@ class todayArticle:
         self.date = date
         self.content = content
         self.url = url
-#asd
+
 def stCrawl(url,pageCount):
     #number of pages
     stURLsList = []
