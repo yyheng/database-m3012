@@ -9,7 +9,7 @@ import time
 from time import sleep
 import threading
 
-def ScrapeCNA(category):
+def ScrapeCNA(category,pages):
     #1 is health, #2 is business, #3 politics
     db = mysql.connect(
         host="rm-gs595dd89hu8175hl6o.mysql.singapore.rds.aliyuncs.com",
@@ -25,7 +25,7 @@ def ScrapeCNA(category):
     else:
         search = "politics"
 
-    for i in range(8):
+    for i in range(pages):
         contentlinks = []
         driver = webdriver.Chrome(executable_path="chromedriver.exe", port=8080)
         pageurl = "https://www.channelnewsasia.com/action/news/8396414/search?q={0}&page={1}".format(search, i)
@@ -98,6 +98,6 @@ def ScrapeCNA(category):
                 print(ArticleTitle)
                 continue
 
-ScrapeCNA(1)
+ScrapeCNA(3,2)
 
 
