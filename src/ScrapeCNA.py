@@ -4,6 +4,9 @@ from src.SentimentTest1 import SentimentAnalyse
 from datetime import datetime
 import random
 import mysql.connector as mysql
+import time
+from time import sleep
+
 
 def ScrapeCNA(category):
     #1 is health, #2 is business, #3 politics
