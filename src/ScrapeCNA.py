@@ -7,7 +7,6 @@ import random
 import mysql.connector as mysql
 import time
 from time import sleep
-import threading
 
 def ScrapeCNA(category,pages):
     #1 is health, #2 is business, #3 politics
