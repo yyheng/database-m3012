@@ -7,35 +7,23 @@
 {% block home_active %}active{% endblock %}
 {% block content %}
 
-<div id="scroll-container">
-    <div class="wrap-container " id="wrap-scroll">
-      <ul id="ul-scroll">
-        <h3 class="card-title text-danger">Quick Glance</h3>
-        {% for b in article %}
-        <li class="active">
-          <span class="item">
-            <form method="POST">
-                <input type="text" id="post_item" name="text" value="{{b[0]}}">
-                <input type="submit" id="display_text" value="{{b[1]}}">
-            </form>
-          </span>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-  <svg>
-    <defs>
-      <linearGradient id="gradient" x1="0" y1="0%" x2 ="0" y2="50%">
-        <stop stop-color="black" offset="0"/>
-        <stop stop-color="white" offset="1"/>
-      </linearGradient>
-  
-      <mask id="masking" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
-        <rect y="0" width="1" height="1" fill="url(#gradient)" />
-      </mask>
-    </defs>
-  </svg>
+<div id="scroll-container p-2">
+<div class="wrap-container " id="wrap-scroll">
+    <ul id="ul-scroll">
+    <h3 class="card-title text-danger">Quick Glance</h3>
+    {% for b in article %}
+    <li class="active">
+        <span class="item">
+        <form method="POST">
+            <input type="text" id="post_item" name="text" value="{{b[0]}}">
+            <input type="submit" id="display_text" value="{{b[1]}}">
+        </form>
+        </span>
+    </li>
+    {% endfor %}
+    </ul>
+</div>
+</div>
 
 <div class="container-fluid">
     <div class="container">
