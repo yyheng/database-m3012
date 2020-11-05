@@ -57,16 +57,8 @@ def logout():
 
 
 ########################### MAIN ###########################
-#return route to index view
-@app.route("/")
-def article():
-    #return redirect(url_for("index"))
-    article = SelectAllArticleTitle(cursor)
-
-    return render_template("main/article.htm", article=article)
-
 #return route to login view
-@app.route("/login")
+@app.route("/")
 def login():
         return render_template("main/login.htm")
 
@@ -128,7 +120,9 @@ def user_dashboard():
 @app.route("/user_article")
 @login_required
 def user_article():
-    return render_template("main/user_article.htm", username=session['username'])
+    article = SelectAllArticleTitle(cursor)
+
+    return render_template("main/user_article.htm", article=article,username=session['username'])
 
 #return route to user favourite view, profile, privillege, etc
 @app.route("/user_profile")
