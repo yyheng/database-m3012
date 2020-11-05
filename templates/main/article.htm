@@ -25,11 +25,10 @@
                 </div>
                 <!-- news article header -->
                 <form method="POST">
-                    <input type="text" name="text" value="{{a[0]}}">
-                    <input type="submit">
+                    <input type="text" id="post_item" name="text" value="{{a[0]}}">
+                    <input type="submit" id="display_text" value="{{a[1]}}">
                 </form>        
-
-                <a href="{{ url_for("user_article_insides") }}" class="text-dark"><h4>{{a[1]}}</h4></a>
+                <!-- <a href="{{ url_for("user_article_insides") }}" class="text-dark"><h4>{{a[1]}}</h4></a> -->
                 <p>{{a[4]}} </p>
             </div>
         {% endfor %}

@@ -1,13 +1,10 @@
-/* 
-    custom stylesheet here 
-*/
-/* nav.navbar.navbar-expand-lg.navbar-dark.bg-dark { height: 60px; } */
+/*  custom stylesheet here */
 
-.navbar-text {
-    display: inline-block;
-    padding-top: .0rem !important; 
-    padding-bottom: .0rem !important;
-}
+.navbar-text { display: inline-block; padding-top: .0rem !important;  padding-bottom: .0rem !important; }
 footer { padding: 10 0; }
 body { margin-bottom: 60; }
 .container-fluid, .container { margin-top: 30px !important; }
+
+/* article items */
+#post_item { display: none; }
+input#display_text { border: none; font-size: 20px; background: none; font-weight: bold; padding: 0; }
