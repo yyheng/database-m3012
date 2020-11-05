@@ -50,9 +50,17 @@ def SelectUserPayment(cursor, UserID):
     result = cursor.fetchone()
     return result
 
+def SelectLikedArticles(cursor, UserID):
+    query = "SELECT a.ArticleID, a.ArticleTitle, a.ArticleDate, c.CategoryName, p.AgencyName " \
+            "FROM likedby l, article a, agency p, articlecategory c " \
+            "WHERE l.UserID = {0} AND a.ArticleID = l.ArticleID AND a.AgencyID = p.AgencyID AND a.CategoryID = c.CategoryID".format(UserID)
+    cursor.execute(query)
+    result = cursor.fetchall()
+    return result
 
 #print(UserAuth(cursor,"test","123"))
 #print(InsertPaymentMethod(db,cursor,7,"5500 0000 0000 0004","03/21"))
 #print (SelectUserPayment(cursor, 7))
 #print(UserAuth(cursor,"test","1234"))
 #UserCreate(db,cursor,"","1234")
+#print(SelectLikedArticles(cursor,7))
