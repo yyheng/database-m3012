@@ -41,7 +41,7 @@ $(function() {
     $("div.item:gt(6)").not(":eq(0)").css("background-color", "#f8f8f8");
 
     $(window).on("scroll", function () {
-        if ($(this).scrollTop() > 400) {
+        if ($(this).scrollTop() > 200) {
             $("div.item").show();
         } else {
             $("div.item:gt(6)").not(":eq(0)").hide();
