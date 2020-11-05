@@ -3,6 +3,8 @@
 {% block content %}
 <div class="container-fluid">
     <div class="container">
+        <a class="text-dark" href="{{ url_for('article') }}"><small>← return back to previous page</small></a>
+        <br><br>
         <div> 
             <!-- item type -->
             {% if article_item[5].lower() == "health" %}
