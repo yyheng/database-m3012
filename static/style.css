@@ -13,6 +13,7 @@ input#display_text { border: none; background: none; font-weight: bold; padding:
 #scroll-container{ overflow: hidden; height: 400px; top: 100px; position: relative; }
 .wrap-container { position: relative; max-height: 400px; width: 100%; max-width: 100%; overflow: auto; }
 .wrap-container::-webkit-scrollbar { display:none; }
-ul { list-style: none; position: relative;  top: 50px; }
-ul, ul li { margin: 0; padding: 0;  text-align: center; }
-ul li {  height: 50px; line-height: 50px; overflow: hidden; }
+
+.wrap-container ul { list-style: none; position: relative;  top: 50px; }
+.wrap-container ul, ul li { margin: 0; padding: 0;  text-align: center; }
+.wrap-container ul li {  height: 50px; line-height: 50px; overflow: hidden; }
