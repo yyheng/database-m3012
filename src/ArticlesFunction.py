@@ -1,7 +1,7 @@
 import mysql.connector as mysql
 from datetime import datetime
 import hashlib
-#
+
 # db = mysql.connect(
 #     host ="rm-gs595dd89hu8175hl6o.mysql.singapore.rds.aliyuncs.com",
 #     user ="ict1902698psk",
@@ -39,6 +39,20 @@ def LikeArticle(db, cursor,userID,articleID):
     except:
         return False
 
+def UnlikeArticle(db, cursor,userID,articleID):
+    try:
+        query = "DELETE FROM likedby WHERE UserID = %s AND ArticleID = %s"
+        val = (userID, articleID)
+        cursor.execute(query, val)
+        db.commit()
+        if cursor.rowcount > 0:
+            return True
+        else:
+            return False
+    except:
+        return False
+
 #print(LikeArticle(db,cursor,7,2420))
 #print(SelectArticleDetails(cursor,2427))
 #print(SelectAllArticleTitle(cursor)[0])
+#print(UnlikeArticle(db,cursor,7,2417))
