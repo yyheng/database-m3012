@@ -2,14 +2,13 @@ import hashlib
 import mysql.connector as mysql
 import datetime as dt
 
-
-# db = mysql.connect(
-#     host ="rm-gs595dd89hu8175hl6o.mysql.singapore.rds.aliyuncs.com",
-#     user ="ict1902698psk",
-#     passwd ="KSP8962091",
-#     database = "sql1902698psk"
-# )
-# cursor = db.cursor()
+    db = mysql.connect(
+        host ="rm-gs595dd89hu8175hl6o.mysql.singapore.rds.aliyuncs.com",
+        user ="ict1902698psk",
+        passwd ="KSP8962091",
+        database = "sql1902698psk"
+    )
+    cursor = db.cursor()
 
 def UserAuth(db, cursor, Username, Password):
     query = "SELECT * FROM user WHERE user.UserName = '{0}' AND UserPw = SHA2('{1}',256)".format(Username,Password)
@@ -67,6 +66,21 @@ def SelectLikedArticles(cursor, UserID):
     result = cursor.fetchall()
     return result
 
+def Transact(db,cursor,UserID):
+    try:
+        #Insert Receipt
+        query = "INSERT INTO order_details VALUES (%s,%s,%s,%s)"
+        val = (0, 10, dt.datetime.now().date(),UserID)
+        cursor.execute(query, val)
+        #Update the person's tier
+        query = "UPDATE user SET TierID = 2 WHERE UserID = {0}".format(UserID)
+        cursor.execute(query)
+        db.commit()
+        return True
+    except:
+        return False
+
+print(Transact(db,cursor,8))
 #print(UserAuth(db,cursor,"test1","123"))
 #print(InsertPaymentMethod(db,cursor,7,"5500 0000 0000 0004","03/21"))
 #print (SelectUserPayment(cursor, 7))
