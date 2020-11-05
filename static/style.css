@@ -8,3 +8,4 @@ body { margin-bottom: 60; }
 /* article items */
 #post_item { display: none; }
 input#display_text { border: none; background: none; font-weight: bold; padding: 0; }
+.article_item { text-align: justify; }

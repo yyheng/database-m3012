@@ -2,12 +2,43 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 <div class="container-fluid">
-<div class="container">
-    <h3 class="card-title">Article Name Here</h3>
-        <div class="container p-3 my-3 border item">
-            <div class="d-flex justify-content-between">
-                <p>Test Var: {{ text }}</p>
-            </div>
+    <div class="container">
+        <div> 
+            <!-- item type -->
+            {% if article_item[5].lower() == "health" %}
+            <p class="text-white border border-white rounded bg-danger p-2"><em><small>{{article_item[5]}}</small></em></p>
+            {% endif %}
+            {% if article_item[5].lower() == "politics" %}
+            <p class="text-white border border-white rounded bg-success p-2"><em><small>{{article_item[5]}}</small></em></p>
+            {% endif %}
+            {% if article_item[5].lower() == "business" %}
+            <p class="text-white border border-white rounded bg-primary p-2"><em><small>{{article_item[5]}}</small></em></p>
+            {% endif %}
         </div>
+        <h3 class="card-title">{{ article_item[0] }}</h3>
+        <div class="d-flex justify-content-between">
+            <!-- article url -->
+            <a href="{{ article_item[2] }}" target="_blank">{{ article_item[2] }}</a>
+            <!-- article date -->
+            <span><strong>{{ article_item[1] }}</strong></span>
+        </div>
+        <div class="container p-3 my-3 border item">
+            <div>
+                <div class="article_item">
+                    <!-- article -->
+                    {{ article_item[4] }}
+                </div>
+                <br>
+                <!-- source item-->
+                <div>Source:<em class="text-danger"> {{ article_item[6] }}</em></div>
+                <!-- sentimental analysis rating -->
+                <p>Sentimental Rating: {% if (article_item[3] < 0): %}
+                                        <em class="text-danger">{{ article_item[3] }}</em>
+                                        {% else: %}
+                                        <em class="text-info">{{ article_item[3] }}</em>     
+                                        {% endif %}
+                </p>
+        </div>
+    </div>
 </div>
 {% endblock %}

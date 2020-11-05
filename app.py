@@ -4,7 +4,7 @@ import mysql.connector as mysql
 from functools import wraps
 
 from src.UserFunctions import UserAuth, UserCreate
-from src.ArticlesFunction import SelectAllArticleTitle
+from src.ArticlesFunction import SelectAllArticleTitle, SelectArticleDetails
 
 #UserName: test PW:123 Admin
 
@@ -122,12 +122,12 @@ def article():
     article = SelectAllArticleTitle(cursor)
     return render_template("main/article.htm", article=article,username=session['username'])
 
-
 @app.route("/article", methods=['POST'])
 @login_required
 def article_id():
-    text = request.form['text']
-    return render_template('main/user_article_insides.htm',text=text, username=session['username'])
+    article_id = request.form['text']
+    article_item = SelectArticleDetails(cursor, article_id)
+    return render_template('main/user_article_insides.htm', username=session['username'], article_item=article_item)
 
 #return route to user article individual view
 @app.route("/user_article_insides")
