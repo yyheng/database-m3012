@@ -127,7 +127,7 @@ def article():
 @login_required
 def article_id():
     text = request.form['text']
-    return render_template('main/user_article_insides.htm',text=text)
+    return render_template('main/user_article_insides.htm',text=text, username=session['username'])
 
 #return route to user article individual view
 @app.route("/user_article_insides")
