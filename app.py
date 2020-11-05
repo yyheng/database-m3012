@@ -75,16 +75,16 @@ def login_post():
     username = request.form.get('usernameTB')
     password = request.form.get('passwordTB')
     
-    account = UserAuth(cursor, username, password)
+    account = UserAuth(db,cursor, username, password)
     if account:
         session['logged_in'] = True
-        session['id'] = UserAuth(cursor, username, password)[0]
-        session['username'] = UserAuth(cursor, username, password)[1]
+        session['id'] = UserAuth(db, cursor, username, password)[0]
+        session['username'] = UserAuth(db, cursor, username, password)[1]
 
         # check whether if account is administrator is admin
         # 0 is not admin
         # 1 is admin
-        if (UserAuth(cursor, username, password)[4] == 1):
+        if (UserAuth(db,cursor, username, password)[4] == 1):
             session['is_admin'] = True
 
         # Redirect to home page
@@ -110,7 +110,7 @@ def register_post():
     reg_conpw = request.form.get('confirm_pwTB')
 
     if (reg_pw == reg_conpw):
-        if (UserAuth(cursor, reg_username, reg_pw) == None):
+        if (UserAuth(db,cursor, reg_username, reg_pw) == None):
             UserCreate(db, cursor, reg_username, reg_pw)
             flash('Account successfully created.')
     else:
