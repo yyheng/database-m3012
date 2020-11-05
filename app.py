@@ -4,7 +4,7 @@ import mysql.connector as mysql
 from functools import wraps
 
 from src.UserFunctions import UserAuth, UserCreate
-from src.ArticlesFunction import SelectAllArticleTitle, SelectArticleDetails
+from src.ArticlesFunction import SelectAllArticleTitle, SelectArticleDetails, LikeArticle
 
 #UserName: test PW:123 Admin
 
@@ -122,18 +122,27 @@ def article():
     article = SelectAllArticleTitle(cursor)
     return render_template("main/article.htm", article=article,username=session['username'])
 
-@app.route("/article", methods=['POST'])
+@app.route("/article", methods=['GET','POST'])
 @login_required
 def article_id():
     article_id = request.form['text']
     article_item = SelectArticleDetails(cursor, article_id)
-    return render_template('main/user_article_insides.htm', username=session['username'], article_item=article_item)
+    return render_template('main/user_article_insides.htm', username=session['username'], article_id=article_id, article_item=article_item)
 
 #return route to user article individual view
 @app.route("/user_article_insides")
 @login_required
 def user_article_insides():
     return render_template("main/user_article_insides.htm", username=session['username'])
+
+@app.route("/user_article_insides", methods=['POST'])
+@login_required
+def user_like_article_insides():
+    article_id = request.form['text']
+    username = session['username']
+    LikeArticle(db, cursor,username,article_id)
+    
+    return redirect(url_for('user_articles_insides'))
 
 #return route to user favourite view, profile, privillege, etc
 @app.route("/user_profile")

@@ -31,16 +31,27 @@
                     {{ article_item[4] }}
                 </div>
                 <br>
-                <!-- source item-->
-                <div>Source:<em class="text-danger"> {{ article_item[6] }}</em></div>
-                <!-- sentimental analysis rating -->
-                <p>Sentimental Rating: {% if (article_item[3] < 0): %}
-                                        <em class="text-danger">{{ article_item[3] }}</em>
-                                        {% else: %}
-                                        <em class="text-info">{{ article_item[3] }}</em>     
-                                        {% endif %}
-                </p>
+                <div>
+                    <!-- source item-->
+                    <div class="all_item">
+                        <span>Source:<em class="text-danger"> {{ article_item[6] }}</em></span>
+                        <!-- sentimental analysis rating -->
+                        <p>Sentimental Rating: {% if (article_item[3] < 0): %}
+                                                <em class="text-danger">{{ article_item[3] }}</em>
+                                                {% else: %}
+                                                <em class="text-info">{{ article_item[3] }}</em>     
+                                                {% endif %}
+                        </p>
+                    </div>
+                    
+                    <!-- like item -->
+                    <form method="POST">
+                        <input type="text" id="post_item" name="text" value="{{ article_id }}">
+                        <input type="submit" class="btn btn-danger" id="like_btn" value="❤ Like this Article">
+                    </form>
+            </div>
         </div>
     </div>
 </div>
+
 {% endblock %}
