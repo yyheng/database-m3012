@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from src.SentimentTest1 import SentimentAnalyse
+from SentimentTest1 import SentimentAnalyse
 from datetime import datetime
 from selenium import webdriver
 import random
@@ -44,21 +44,15 @@ def ScrapeCNA(category,pages):
         for links in contentlinks:
             SentimentRating = 0
             ArticleText = ""
-            AuthorID = None
             AgencyID = 2
             CategoryID = category
             print("----------------------")
             print(links)
             ArticleURL = links
-            # Find Author
             contentpage = requests.get(links)
             soup = BeautifulSoup(contentpage.content, 'html.parser')
             author_results = soup.find("a", class_="article__author-title")
 
-            if (author_results != None):
-                for string in author_results.stripped_strings:
-                    if string != "By":
-                        print(repr(string))
             # Find Title
             Title = soup.find("h1", class_="article__title")
             if (Title != None):
@@ -81,9 +75,9 @@ def ScrapeCNA(category,pages):
             datetime_object = datetime.strptime(Dateresult.getText(), '%d %b  %Y %I:%M%p')
             ArticleDate = datetime_object.strftime("%Y-%m-%d")
             try:
-                query = "INSERT INTO article VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,MD5(%s))"
+                query = "INSERT INTO article VALUES (%s,%s,%s,%s,%s,%s,%s,%s,MD5(%s))"
                 val = (
-                0, ArticleURL, ArticleTitle, ArticleDate, SentimentRating, ArticleText, "2", AgencyID, CategoryID,
+                0, ArticleURL, ArticleTitle, ArticleDate, SentimentRating, ArticleText, AgencyID, CategoryID,
                 ArticleTitle)
                 cursor.execute(query, val)
                 print(ArticleDate)
