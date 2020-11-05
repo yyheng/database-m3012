@@ -55,7 +55,6 @@ def logout():
     flash("You have been logged out!")
     return redirect(url_for('login'))
 
-
 ########################### MAIN ###########################
 #return route to login view
 @app.route("/")
@@ -117,12 +116,24 @@ def user_dashboard():
     return render_template("main/user_dashboard.htm", username=session['username'])
 
 #return route to user article view
-@app.route("/user_article")
+@app.route("/article")
 @login_required
-def user_article():
+def article():
     article = SelectAllArticleTitle(cursor)
+    return render_template("main/article.htm", article=article,username=session['username'])
 
-    return render_template("main/user_article.htm", article=article,username=session['username'])
+
+@app.route("/article", methods=['POST'])
+@login_required
+def article_id():
+    text = request.form['text']
+    return render_template('main/user_article_insides.htm',text=text)
+
+#return route to user article individual view
+@app.route("/user_article_insides")
+@login_required
+def user_article_insides():
+    return render_template("main/user_article_insides.htm", username=session['username'])
 
 #return route to user favourite view, profile, privillege, etc
 @app.route("/user_profile")

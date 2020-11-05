@@ -10,7 +10,7 @@
     <div class="container">
         <h3 class="card-title">Latest News</h3>
         {% for a in article %}
-            <div class="container p-3 my-3 border item" id="article{{a[0]}}">
+            <div class="container p-3 my-3 border item" id="{{a[0]}}">
                 <div class="d-flex justify-content-between">
                     {% if a[3].lower() == "health" %}
                     <p class="text-danger"><em><small>{{a[3]}}</small></em></p>
@@ -24,7 +24,12 @@
                     <p><small>{{a[2]}}</small></p>
                 </div>
                 <!-- news article header -->
-                <a href="#" class="text-dark"><h4>{{a[1]}}</h4></a>
+                <form method="POST">
+                    <input type="text" name="text" value="{{a[0]}}">
+                    <input type="submit">
+                </form>        
+
+                <a href="{{ url_for("user_article_insides") }}" class="text-dark"><h4>{{a[1]}}</h4></a>
                 <p>{{a[4]}} </p>
             </div>
         {% endfor %}
