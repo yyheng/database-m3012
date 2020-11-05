@@ -2,7 +2,7 @@
 
 .navbar-text { display: inline-block; padding-top: .0rem !important;  padding-bottom: .0rem !important; }
 footer { padding: 10 0; }
-body { margin-bottom: 60; }
+body { margin-bottom: 100px !important; }
 .container-fluid, .container { margin-top: 30px !important; }
 
 /* article items */
