@@ -62,10 +62,14 @@ def CheckLike(cursor,userID,articleID):
         return False
 
 def SelectRecentArticles(cursor):
-    pass
+    #This function is to select the past 24 hours of articles so as to generate the word cloud
+    query = "SELECT ArticleText FROM article WHERE ArticleDate >= date_sub(curdate(), interval 1 day)"
+    cursor.execute(query)
+    result = cursor.fetchall()
+    return result
 
 
-
+#print(SelectRecentArticles(cursor))
 #print(CheckLike(cursor,6,2420))
 #print(LikeArticle(db,cursor,7,2420))
 #print(SelectArticleDetails(cursor,2427))
