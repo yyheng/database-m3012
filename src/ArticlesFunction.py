@@ -52,7 +52,7 @@ def UnlikeArticle(db, cursor,userID,articleID):
     except:
         return False
 
-def CheckLike(db,cursor,userID,articleID):
+def CheckLike(cursor,userID,articleID):
     query = "SELECT * FROM likedby WHERE UserID = {0} AND ArticleID = {1}".format(userID,articleID)
     cursor.execute(query)
     result = cursor.fetchone()
@@ -61,7 +61,12 @@ def CheckLike(db,cursor,userID,articleID):
     else:
         return False
 
-#print(CheckLike(db,cursor,6,2420))
+def SelectRecentArticles(cursor):
+    pass
+
+
+
+#print(CheckLike(cursor,6,2420))
 #print(LikeArticle(db,cursor,7,2420))
 #print(SelectArticleDetails(cursor,2427))
 #print(SelectAllArticleTitle(cursor)[0])
